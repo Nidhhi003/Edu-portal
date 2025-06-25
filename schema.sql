@@ -1,0 +1,7 @@
+
+CREATE TABLE files (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    filename TEXT NOT NULL,
+    subject TEXT NOT NULL,
+    upload_date TEXT DEFAULT CURRENT_TIMESTAMP
+);
