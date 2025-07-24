@@ -1,0 +1,17 @@
+DROP TABLE IF EXISTS files;
+DROP TABLE IF EXISTS users;
+
+CREATE TABLE users (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    username TEXT UNIQUE NOT NULL,
+    password TEXT NOT NULL
+);
+
+CREATE TABLE files (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    filename TEXT NOT NULL,
+    subject TEXT NOT NULL,
+    upload_date TEXT DEFAULT CURRENT_TIMESTAMP,
+    user_id INTEGER,
+    FOREIGN KEY (user_id) REFERENCES users(id)
+);

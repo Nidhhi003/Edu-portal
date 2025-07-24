@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Overview - ScribbleSpace</title>
+    
+     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"> 
+    <style>
+        body{
+            margin: 10px 10px 50px 10px;
+        }
+        .navbar{
+            display:flex;
+            justify-content: space-between;
+            align-items: center;
+            margin:20px 20px;
+            
+        }
+        .logo{
+             font-family: 'Pacifico', cursive;
+            font-size: 1.5rem;
+        }
+        .nav-container{
+            display: flex;
+            justify-content:space-between;
+            align-items: right;
+            gap: 10px ;
+            
+        }
+        .nav-container a{
+            margin: 0px 10px;
+            text-decoration: none;
+            border-radius: 20px;
+            background-color: #04ddb2;
+            color: #fff;
+            padding: 0.8rem 0.8rem;
+            width: 120px;
+            text-align: center;
+            font-weight: 600;
+            font-size: 1rem;
+        }
+        .container {
+            max-width: 960px;
+            margin: auto;
+            padding: 40px 20px;
+            background: #fff;
+            border-radius: 16px;
+            box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+
+
+        }
+        .overview-title {
+            font-size: 36px;
+            color: #111;
+            
+            
+        }
+        .overview-subtitle {
+            font-size: 20px;
+            color: #555;
+            
+        }
+        ul.features {
+            list-style: none;
+            padding: 0;
+        }
+        ul.features li {
+            background: #f4f4f4;
+            margin: 10px 0;
+            padding: 12px 20px;
+            border-left: 5px solid #c80099;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="navbar">
+         <a class="logo">Scribble<span style="color:#04ddb2; font-family: 'Pacifico', cursive">Space</span>📚</a>
+            <nav class="nav-container">
+                <a href="/">Home</a>
+                
+                
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <h1 class="overview-title">About Scribble<span style="color:#04ddb2">Space</span>📚</h1>
+        <p class="overview-subtitle">A smarter way to manage and access learning resources</p>
+
+        <ul class="features">
+            <li><strong>📁 Easy File Uploads:</strong> Share notes, projects, and assignments in seconds.</li>
+            <li><strong>📚 Organized by Subject:</strong> Makes it easy to find what you need.</li>
+            <li><strong>⚡ Fast Downloads:</strong> Access your files instantly from any device.</li>
+            <li><strong>🧠 Built with Flask + SQLite:</strong> Lightweight yet powerful backend for educational use.</li>
+            <li><strong>🎓 Student-Centric Design:</strong> Focused on usability and accessibility.</li>
+        </ul>
+    </main>
+
+</body>
+</html>

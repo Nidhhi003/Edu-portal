@@ -1,0 +1,135 @@
+<html>
+<head>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+        body{
+            font-family: 'Poppins', sans-serif;
+            
+        }
+        
+        .upload-box{
+            width:400px;
+            margin:50px auto;
+            border:2px solid black;
+            border-radius: 10px;
+            padding: 25px;
+            text-align: center;
+            box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
+            
+        }
+        .subject-input{
+            width: 100%;
+            margin-bottom:16px;
+            box-sizing: border-box;
+            padding: 16px;
+            border-radius: 10px;
+            border:1px solid rgb(191, 187, 187);
+            font-size: large;
+            text-align: center;
+            
+        }
+        .subject-input:hover{
+            transform: scale(1.1);
+            transition: all 0.3s ease;
+            box-shadow: 2rem 2rem 2rem 2rem(0,0,0,0.15);
+        }
+        .upload-btn{
+            border: none;
+            border-radius: 10px;
+            background-color:#04ddb2;
+            color: white;
+            padding: 16px;
+            width: 100%;
+            font-size: 1.2rem;
+        }     
+        .upload-btn:hover{
+            transform: scale(1.1);
+            transition: all 0.3s ease;
+            background-color: #89ebd7;
+            color: black;
+        }
+        .input[type="file"] {
+        display: none;
+        }
+
+        .custom-file-upload {
+    display: block;
+    width: 100%;
+    margin-bottom: 16px;
+    box-sizing: border-box;
+    padding: 16px;
+    border-radius: 10px;
+    border: 1px solid lightgrey;
+    font-size: large;
+    text-align: center;             
+    font-family: inherit;           
+    color: gray;                    
+    }
+
+        .custom-file-upload:hover{
+            transform: scale(1.1);
+            transition: all 0.3s ease;
+            box-shadow: 2rem 2rem 2rem 2rem(0,0,0,0.15);
+        }
+
+        #file-name-display {
+        font-size: 0.95rem;
+        color: black;
+        font-weight: 500;
+        margin-bottom: 10px;
+        }
+        @media (max-width: 768px) {
+        .upload-box{
+            width:150px;
+            margin:auto;
+            
+           
+            padding: 25px;
+            text-align: center;
+            box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
+        }
+    }
+</style>
+</head>
+<body>
+    
+<div class="upload-box">
+        <img src="https://img.icons8.com/?size=100&id=113801&format=png&color=000000"  height="100px" alt="">
+        <h1>Upload file</h1>
+        
+   
+        <form method="POST" action="/upload" enctype="multipart/form-data" >
+
+        <!-- select subject input box -->
+        <input type="text" placeholder="Subject" name="subject" required class="subject-input"><br>
+
+         <!-- choose file input box -->
+        <label for="file-upload" class="custom-file-upload">Choose File</label>
+        <input id="file-upload" type="file" name="file" class="input" required onchange="displayFileName()" />
+
+        <!-- file name display -->
+        <div id="file-name-display">No file selected</div>
+
+         <!-- file upload box -->
+        <button type="submit" class="upload-btn">Upload</button>
+</form>
+</div>
+    <script>
+        function displayFileName() {
+        const fileInput = document.getElementById('file-upload');
+        const fileNameDisplay = document.getElementById('file-name-display');
+
+        if (fileInput.files.length > 0) {
+            fileNameDisplay.textContent = "Selected: " + fileInput.files[0].name;
+        } else {
+            fileNameDisplay.textContent = "No file selected";
+        }
+        }
+        
+    </script>
+   
+</body>
+</html>
+
+

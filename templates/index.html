@@ -1,0 +1,75 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edu Portal</title>
+    
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+     
+</head>
+<body>
+ <section>
+    <div class="div-nav-bar">
+      <nav class="nav-bar-container">
+         <a class="logo">Scribble<span style="color:#04ddb2; font-family: 'Pacifico', cursive">Space</span>📚</a>
+        
+       <ul class="nav-menu">
+         <li class="nav-link"><a href="/overview" >Overview</a></li>
+         <li class="nav-link"><a href="/register" >Register</a></li> 
+         <li class="nav-link"><a href="/login" >Login</a></li>
+         <li class="nav-link"><a href="/logout">Logout</a></li>
+         <li class="nav-link">Help</li>
+       </ul>
+       
+        <a href="/upload" class="upload-btn">Upload here</a>
+
+       
+     </nav>
+    </div>
+  </section>
+    
+        <section class="section">
+          <div class="container">
+            <!-- top -->
+            <div class="top-part">
+              <h1 class="top-title">{% if session['username'] %}<span style="margin-left: 10px; font-weight: 600;">Welcome, {{ session['username'] }}</span>
+{% endif %}
+to <span style="color:#04ddb2;">ScribbleSpace</span></h1>
+              <p class="description">Empowering Learning, Anywhere Anytime!</p>
+            </div>
+            <!-- middle -->
+             <div class="middle-part">
+              <img src="https://plus.unsplash.com/premium_vector-1726216371069-9e179b7ff838?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
+              class="image"  alt="">
+
+             </div>
+             <!-- bottom -->
+              <div class="bottom-part">
+                <h1 class="bottom-title">Tech Up Your Skills</h1>
+                
+                    <a href="/files" class="view-btn">View files</a>
+ 
+               
+
+              </div>
+          </div>
+          
+        </section>
+
+         
+
+      <footer>
+          <div class="footer-container">
+                <p class="footer-text">@ All rights reserved.</p>
+          </div>
+      </footer>
+
+
+
+    
+</body>
+</html>
+

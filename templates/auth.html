@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% if show_login %}Login{% else %}Register{% endif %}</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+        .container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        h1 {
+            color: #333;
+        }
+        input[type="text"], input[type="password"] {
+            width: 95%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        input:hover{
+            transform: scale(1.1);
+            transition: all 0.4s ease;
+            box-shadow: 2rem 2rem 2rem 2rem(0,0,0,0.15);
+        }
+        button {
+            width: 140px;
+            padding: 0.8rem 1rem;
+            margin: 0 10px;
+            border-radius:20px ;
+            background-color: #04ddb2;
+            border: none;
+            color: white;
+            font-weight: 600;
+            font-size: 1rem;
+        }
+        button:hover {
+            transform: scale(1.1);
+            transition: all 0.4s ease  ;
+        }
+        .error {
+            color: red;
+            margin-bottom: 10px;
+        }
+        a {
+            font-family: 'Pacifico', cursive;
+            font-size: 1.5rem;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+                <a class="logo">Scribble<span style="color:#04ddb2; font-family: 'Pacifico', cursive">Space</span>📚</a>
+
+        {% if show_login %}
+            <h2>Login</h2>
+            {% if login_error %}
+                <p class="error">{{ login_error }}</p>
+            {% endif %}
+            <form method="POST" action="/login">
+                <input type="text" name="username" placeholder="Username" required>
+                <input type="password" name="password" placeholder="Password" required>
+                <button type="submit">Login</button>
+            </form>
+            <p>Not a member? <a href="/register">Sign Up</a></p>
+        {% else %}
+            <h2>Create Account</h2>
+            {% if register_error %}
+                <p class="error">{{ register_error }}</p>
+            {% endif %}
+            <form method="POST" action="/register">
+                <input type="text" name="username" placeholder="Username" required>
+                <input type="password" name="password" placeholder="Password" required>
+                <button type="submit">Register</button>
+            </form>
+            <p>Already a member? <a href="/login">Login</a></p>
+        {% endif %}
+
+        
+    </div>
+</body>
+</html>
